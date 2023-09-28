@@ -9,4 +9,4 @@ function palindrome(str) {
   return result;
 }
 
-console.log(palindrome("abba"));
+console.log(palindrome("abb"));
