@@ -28,9 +28,11 @@ class LinkedList {
     }
     return counter;
   }
+
   getFirst() {
     return this.head;
   }
+
   getLast() {
     if (!this.head) {
       return null;
@@ -44,15 +46,34 @@ class LinkedList {
     }
     return node;
   }
+
   clear() {
     this.head = null;
   }
+
   removeFirst() {
     if (!this.head) {
       return;
     }
     let node = this.head;
     this.head = node.next;
+  }
+
+  removeLast() {
+    if (!this.head) {
+      return;
+    }
+    if (!this.head.next) {
+      this.head = null;
+      return;
+    }
+    let previous = this.head;
+    let node = this.head.next;
+    while (node.next) {
+      previous = node;
+      node = node.next;
+    }
+    previous.next = null;
   }
 }
 
